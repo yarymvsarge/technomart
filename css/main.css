@@ -12,6 +12,34 @@ body {
   margin: 0 auto;
 }
 
+.link {
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+  border-radius: 4px;
+  background-color: #EE3643;
+  transition: background-color .2s;
+}
+
+.link:hover {
+  background-color: #CA2C37;
+}
+
+.link:active {
+  background-color: #BA2732;
+}
+
+.new::after {
+  content: url("../img/new-ribbon.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* HEADER */
 
 .page-header {
@@ -333,13 +361,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.main-feature--new::after {
-  content: url("../img/new-ribbon.png");
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .main-features__container .main-feature:last-child {
   margin-bottom: 0;
 }
@@ -356,16 +377,7 @@ body {
   display: block;
   width: 135px;
   box-sizing: border-box;
-  padding: 10px 0;
-  font-size: 14px;
-  line-height: 18px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.1);
-  transition: background-color .2s;
 }
 
 .main-feature__link:hover {
@@ -505,22 +517,166 @@ body {
   bottom: 20px;
   display: block;
   width: 195px;
-  padding: 10px 0;
-  font-size: 14px;
-  text-align: center;
-  line-height: 18px;
-  text-decoration: none;
+}
+
+/* СЕКЦИЯ ПОПУЛЯРНЫХ ТОВАРОВ */
+
+.popular-goods {
+  margin-bottom: 20px;
+}
+
+.popular-header {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 24px 24px 30px;
+  background-color: #f9f5f0;
+}
+
+.popular-header__title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 30px;
+  color: #32425c;
+  font-weight: normal;
   text-transform: uppercase;
+}
+
+.popular-header__link {
+  width: 253px;
+}
+
+.goods-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods-item {
+  min-height: 300px;
+  position: relative;
+  display: block;
+  padding: 6px 17px 25px;
+  border: 1px solid #eaeaea;
   color: inherit;
-  border-radius: 4px;
-  background-color: #EE3643;
-  transition: background-color .2s;
+  font-family: 'Pt-Sans', Arial, sans-serif;
+  text-decoration: none;
+  text-align: center;
 }
 
-.features-slide__link:hover {
-   background-color: #CA2C37;
+.goods-item__image {
+  max-width: 100%;
 }
 
-.features-slide__link:active {
-  background-color: #BA2732;
+.goods-item__title {
+  margin: 0 auto 10px;
+  max-width: 160px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000;
+  font-weight: 700;
 }
+
+.goods-item__old-price {
+  display: block;
+  color: #a9a9a9;
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.goods-item__price {
+  position: absolute;
+  bottom: 17px;
+  left: 50%;
+  padding: 9px 0;
+  width: 140px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  background-image: url("../img/red-button.svg");
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+}
+
+.goods-item__user-actions {
+  display: none;
+  position: absolute;
+  top: 45px;
+  font-family: 'Cuprum', Arial, sans-serif;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.goods-item__user-actions .link {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 135px;
+}
+
+.goods-item__buy-action {
+  position: relative;
+  margin-bottom: 8px;
+  border: none;
+  background-color: #63a63e;
+  box-shadow: 0 3px 0 0 #367315;
+}
+
+.goods-item__buy-action::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  opacity: 0.3;
+  background-image: url("../img/icon-cart.svg");
+  background-repeat: no-repeat;
+  transition: opacity .2s;
+}
+
+.goods-item__buy-action:hover {
+  background-color: #5fbb2d;
+}
+
+.goods-item__buy-action:hover::before,
+.goods-item__buy-action:active::before {
+  opacity: 1;
+}
+
+.goods-item__buy-action:active {
+  background-color: #518534;
+}
+
+.goods-item__bookmark-action {
+  border: 3px solid #63a63e;
+  color: #32425c;
+  background-color: #FFF;
+  transition: border-color .2s, background-color .2s, opacity .2s;
+}
+
+.goods-item__bookmark-action:hover {
+  border-color: #32425c;
+  background-color: #FFF;
+}
+
+.goods-item__bookmark-action:active {
+  border-color: #32425c;
+  background-color: #FFF;
+  opacity: 0.3;
+}
+
+.goods-item:hover .goods-item__image {
+  visibility: hidden;
+}
+
+.goods-item:hover .goods-item__user-actions {
+  display: block;
+}
+
