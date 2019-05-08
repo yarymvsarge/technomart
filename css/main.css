@@ -12,6 +12,8 @@ body {
   margin: 0 auto;
 }
 
+/* HEADER */
+
 .page-header {
   background-color: #f3f6f8;
 }
@@ -307,5 +309,218 @@ body {
   background-color: #1d2739;
 }
 
+/* MAIN PAGE */
 
+.main-features__list {
+  display: flex;
+  padding: 59px 0 53px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
 
+.main-features__list li {
+  list-style: none;
+}
+
+.main-feature {
+  position: relative;
+  box-sizing: border-box;
+  width: 300px;
+  margin-bottom: 20px;
+  min-height: 123px;
+  padding: 20px 25px;
+  background-repeat: no-repeat;
+}
+
+.main-feature--new::after {
+  content: url("../img/new-ribbon.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-features__container .main-feature:last-child {
+  margin-bottom: 0;
+}
+
+.main-feature__title {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.main-feature__link {
+  display: block;
+  width: 135px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 18px;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color .2s;
+}
+
+.main-feature__link:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.main-feature__link:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-feature--orange {
+  background-color: #ffc047;
+  background-image: url("../img/icon-1.svg");
+  background-position: right 43px center;
+}
+
+.main-feature--blue {
+  background-color: #3bbce3;
+  background-image: url("../img/icon-2.svg");
+  background-position: right 28px center;
+}
+
+.main-feature--purple {
+  background-color: #dc91d8;
+  background-image: url("../img/icon-3.svg");
+  background-position: right 30px center;
+}
+
+.main-feature--green {
+  background-color: #8ed78f;
+  background-image: url("../img/icon-4.svg");
+  background-position: right 45px center;
+}
+
+.main-features__container .main-feature--orange {
+  background-image: url("../img/icon-5.svg");
+  background-position: right 30px center;
+}
+
+.features-slider {
+  width: 620px;
+  position: relative;
+}
+
+.features-slider__arr {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 22px;
+  height: 40px;
+  padding: 0;
+  margin-top: -20px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-arr.svg");
+  cursor: pointer;
+}
+
+.features-slider__arr--right {
+  right: 25px;
+  left: auto;
+  transform: rotate(180deg);
+}
+
+.features-slider__controls {
+  position: absolute;
+  bottom: 36px;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 0;
+}
+
+.features-slider__control {
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+  padding: 0;
+  box-sizing: content-box;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.features-slider__control:last-child {
+  margin-right: 0;
+}
+
+.features-slider__control--active {
+  background-color: #EE3643;
+}
+
+.features-slider__slides {
+  padding: 0;
+  list-style: none;
+}
+
+.features-slide {
+  display: none;
+  position: relative;
+  padding: 20px 25px;
+  min-height: 266px;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.features-slide--active {
+  display: block;
+}
+
+.features-slide:nth-child(1) {
+  background-image: url("../img/slide-1.jpg");
+}
+
+.features-slide:nth-child(2) {
+  background-image: url("../img/slide-2.jpg");
+}
+
+.features-slide__title {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.features-slide__description {
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.features-slide__link {
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  width: 195px;
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+  border-radius: 4px;
+  background-color: #EE3643;
+  transition: background-color .2s;
+}
+
+.features-slide__link:hover {
+   background-color: #CA2C37;
+}
+
+.features-slide__link:active {
+  background-color: #BA2732;
+}
